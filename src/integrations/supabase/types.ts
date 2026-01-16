@@ -14,7 +14,59 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      upload_sessions: {
+        Row: {
+          created_at: string
+          expires_at: string
+          id: string
+          session_code: string
+        }
+        Insert: {
+          created_at?: string
+          expires_at?: string
+          id?: string
+          session_code: string
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string
+          id?: string
+          session_code?: string
+        }
+        Relationships: []
+      }
+      uploaded_photos: {
+        Row: {
+          created_at: string
+          file_name: string | null
+          file_url: string
+          id: string
+          session_id: string
+        }
+        Insert: {
+          created_at?: string
+          file_name?: string | null
+          file_url: string
+          id?: string
+          session_id: string
+        }
+        Update: {
+          created_at?: string
+          file_name?: string | null
+          file_url?: string
+          id?: string
+          session_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "uploaded_photos_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "upload_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
