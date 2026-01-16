@@ -88,12 +88,16 @@ export const QRPhotoSync = () => {
       {/* Floating QR Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 bg-charcoal text-cream p-4 rounded-full shadow-lg hover:bg-charcoal/90 transition-colors"
-        whileHover={{ scale: 1.1 }}
+        className="fixed bottom-6 right-6 z-50 bg-gradient-to-br from-sage to-charcoal text-cream p-5 rounded-2xl shadow-2xl hover:shadow-sage/30 transition-all border-2 border-cream/20"
+        whileHover={{ scale: 1.1, rotate: 5 }}
         whileTap={{ scale: 0.95 }}
         title="Upload photos from phone"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
       >
-        <QrCode className="w-6 h-6" />
+        <QrCode className="w-7 h-7" />
+        <span className="absolute -top-1 -right-1 w-3 h-3 bg-terracotta rounded-full animate-pulse" />
       </motion.button>
 
       {/* Modal */}
