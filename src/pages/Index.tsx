@@ -1,6 +1,7 @@
 import { Phone, Mail, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import heroBackground from "@/assets/hero-background.jpg";
 
 const Index = () => {
   return (
@@ -22,13 +23,16 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero - Full Width Centered */}
+      {/* Hero - Full Width with Background Image */}
       <section className="relative min-h-screen flex items-center pt-20">
-        {/* Decorative Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-sand/30 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-sage/10 rounded-full blur-3xl" />
-          <div className="absolute top-40 left-20 w-64 h-64 bg-terracotta/5 rounded-full blur-2xl" />
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={heroBackground} 
+            alt="Beautiful clean living room" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
         </div>
         
         <div className="container mx-auto px-6 relative">
