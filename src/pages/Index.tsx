@@ -22,16 +22,17 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero - Dramatic & Elegant */}
+      {/* Hero - Full Width Centered */}
       <section className="relative min-h-screen flex items-center pt-20">
         {/* Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-0 w-[60%] h-[80%] bg-gradient-to-bl from-sand/60 via-cream to-transparent rounded-bl-[200px]" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-sage/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-sand/30 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-sage/10 rounded-full blur-3xl" />
+          <div className="absolute top-40 left-20 w-64 h-64 bg-terracotta/5 rounded-full blur-2xl" />
         </div>
         
         <div className="container mx-auto px-6 relative">
-          <div className="max-w-3xl">
+          <div className="text-center max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -43,20 +44,18 @@ const Index = () => {
             </motion.div>
             
             <motion.h1 
-              className="font-serif text-6xl md:text-8xl text-foreground leading-[0.95] mb-8"
+              className="font-serif text-5xl sm:text-6xl md:text-8xl text-foreground leading-[0.95] mb-8"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             >
               The art of
               <br />
-              <span className="italic text-coffee">immaculate</span>
-              <br />
-              spaces
+              <span className="italic text-coffee">immaculate</span> spaces
             </motion.h1>
             
             <motion.p 
-              className="text-lg font-light text-stone max-w-md leading-relaxed mb-10"
+              className="text-lg md:text-xl font-light text-stone max-w-2xl mx-auto leading-relaxed mb-10"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -66,6 +65,7 @@ const Index = () => {
             </motion.p>
             
             <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -80,6 +80,37 @@ const Index = () => {
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-coffee text-coffee hover:bg-coffee hover:text-cream px-8 py-6 text-sm tracking-widest uppercase font-light rounded-none"
+                asChild
+              >
+                <a href="#services">
+                  Our Services
+                </a>
+              </Button>
+            </motion.div>
+            
+            {/* Trust indicators */}
+            <motion.div 
+              className="flex flex-wrap justify-center gap-8 md:gap-16 mt-20 pt-10 border-t border-border/50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <div className="text-center">
+                <span className="font-serif text-4xl text-coffee">30+</span>
+                <p className="text-xs font-light tracking-widest uppercase text-stone mt-1">Years Experience</p>
+              </div>
+              <div className="text-center">
+                <span className="font-serif text-4xl text-coffee">500+</span>
+                <p className="text-xs font-light tracking-widest uppercase text-stone mt-1">Happy Clients</p>
+              </div>
+              <div className="text-center">
+                <span className="font-serif text-4xl text-coffee">100%</span>
+                <p className="text-xs font-light tracking-widest uppercase text-stone mt-1">Satisfaction</p>
+              </div>
             </motion.div>
           </div>
         </div>
