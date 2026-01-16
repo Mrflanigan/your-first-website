@@ -2,6 +2,7 @@ import { Phone, Mail, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.jpg";
+import { QRPhotoSync } from "@/components/QRPhotoSync";
 
 const Index = () => {
   return (
@@ -369,6 +370,9 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* QR Photo Sync Feature */}
+      <QRPhotoSync />
     </div>
   );
 };
